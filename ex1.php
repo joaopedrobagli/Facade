@@ -1,11 +1,11 @@
 <?php
 
 interface ControleXbox {
-    public function acionarSensorXbox();
+    public function acionarXbox();
 }
 
 class ControleXboxImpl implements ControleXbox {
-    public function acionarSensorXbox() {
+    public function acionarXbox() {
         echo "Acionando o Xbox\n";
     }
 }
@@ -29,12 +29,12 @@ class Cliente {
     public static function main() {
         echo "Usando controle de Xbox:\n";
         $controleXbox = new ControleXboxImpl();
-        $controleXbox->acionarSensorXbox();
+        $controleXbox->acionarXbox();
 
         echo "\nUsando controle de PlayStation adaptado para Xbox:\n";
         $controlePlaystation = new ControlePlaystation();
         $controleAdaptado = new AdapterControle($controlePlaystation);
-        $controleAdaptado->acionarSensorXbox();
+        $controleAdaptado->acionarXbox();
     }
 }
 
